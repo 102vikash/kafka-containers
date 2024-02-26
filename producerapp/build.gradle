@@ -1,0 +1,29 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '2.6.1'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+}
+
+group = 'com.producer'
+version = '0.0.1-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+
+    implementation 'org.springframework.boot:spring-boot-starter' //spring boot wihtout web
+    implementation 'org.springframework.boot:spring-boot-starter-web' //resposible for request and response
+    implementation 'org.springframework.kafka:spring-kafka'
+
+
+    bootJar {
+        archiveFileName = 'kafkaproducer.jar'
+        mainClass = 'com.producer.Main'
+    }
+}
+
+test {
+    useJUnitPlatform()
+}

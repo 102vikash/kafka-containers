@@ -1,0 +1,8 @@
+rootProject.name = 'demo'
+include 'producerapp'
+include 'producerapp:src:componentTest'
+findProject(':producerapp:src:componentTest')?.name = 'componentTest'
+include 'consumerapp'
+include 'consumerapp:src:componentTest'
+findProject(':consumerapp:src:componentTest')?.name = 'componentTest'
+
